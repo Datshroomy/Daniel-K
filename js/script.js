@@ -36,7 +36,6 @@ skillPills.forEach(function (pill) {
 const darkModeToggle = document.querySelector("#dark-mode-toggle");
 
 if (darkModeToggle) {
-
   // Load saved setting
   const savedDarkMode = localStorage.getItem("darkMode");
 
@@ -46,36 +45,32 @@ if (darkModeToggle) {
   }
 
   darkModeToggle.addEventListener("change", function () {
-
     if (darkModeToggle.checked) {
       document.body.classList.add("dark-mode");
       localStorage.setItem("darkMode", "enabled");
-    } 
-    
-    else {
+    } else {
       document.body.classList.remove("dark-mode");
       localStorage.setItem("darkMode", "disabled");
     }
-
   });
 }
 
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        } else {
-            entry.target.classList.remove("show");
-        }
-    });
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
 }, {
-    threshold: 0.2
+  threshold: 0.2
 });
 
 sections.forEach((section) => {
-    observer.observe(section);
+  observer.observe(section);
 });
 
 const typewriterTitles = document.querySelectorAll(".typewriter-title");
@@ -90,7 +85,5 @@ typewriterTitles.forEach((title) => {
     blink-caret 0.75s step-end infinite
   `;
 });
-
-
 
 console.log("If you are reading this ... GET OUTA THE CONSOLE >:(");

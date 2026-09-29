@@ -1,0 +1,121 @@
+:root {
+  --accent: #b5f8be;
+  --bg: #b5f8be;
+  --text: #000000;
+}
+
+body {
+  font-family: "Nerko One", cursive;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  color: var(--text);
+  font-size: xx-large;
+  font-family: "Nerko One", cursive;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  padding: 5px;
+  background-color: rgb(98, 131, 98);
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(98, 131, 98);
+}
+
+img {
+  max-width: 300px;
+  border-radius: 50%;
+  border: 5px solid #ff6464;
+}
+
+p {
+  padding: 10px;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body.dark-mode {
+  --bg: #2d4e31;
+  --text: #f4f4f4;
+}
+
+body.dark-mode nav {
+  background-color: #1e3521;
+}
+
+body.dark-mode nav a {
+  color: white;
+}
+
+body.dark-mode nav a:hover {
+  color: #b5f8be;
+}
+
+.typewriter-title {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+
+  border-right: 3px solid #000;
+
+  /* The title starts invisible */
+  clip-path: inset(0 100% 0 0);
+
+  animation:
+    typing 2s steps(20, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+body.dark-mode .typewriter-title {
+  border-right-color: #fff;
+}
+
+@keyframes typing {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes blink-caret {
+  0%, 100% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: currentColor;
+  }
+}
+
+
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
